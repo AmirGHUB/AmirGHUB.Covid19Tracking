@@ -2,56 +2,89 @@
 
 <html xmlns:th="http://www.thymeleaf.org">
 
-  <head>
-    <title>COVID19 Tracking Application</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <link rel="stylesheet" type="text/css" media="all" 
-          href="../../css/gtvg.css" th:href="@{/css/gtvg.css}" />
-          <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-  </head>
+<head>
+<title>COVID19 Tracking Application</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" type="text/css" media="all"
+	href="../../css/gtvg.css" th:href="@{/css/gtvg.css}" />
+<!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous"> -->
+<link
+	href="https://stackpath.bootstrapcdn.com/bootswatch/4.4.1/lux/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-oOs/gFavzADqv3i5nCM+9CzXe3e5vXLXZ5LZ7PplpsWpTCufB7kqkTlC9FtZ5nJo"
+	crossorigin="anonymous">
+</head>
 
 
-  <body>
-   <div class="container">
-   <h1>COVID19 Tracker Application</h1>
-   <h4><p>This applicaion fetches data from Jhon Hopkins university API and lists new cases of Corona in every country</p></h4>
-   
-     <div class="jumbotron">
-      <h1 class="display-4" th:text="${TotalCasesInEthiopia}"></h1>
-      <p class="lead">Total number of cases in Ethiopia</p>
-     </div>
+<body>
+	<ul class="nav nav-pills">
+		<li class="nav-item"><a class="nav-link active" href="#">Home</a>
+		</li>
+		<li class="nav-item dropdown"><a class="nav-link dropdown-toggle"
+			data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
+			aria-expanded="false">Dropdown</a>
+			<div class="dropdown-menu" style="">
+				<a class="dropdown-item" href="#">Action</a> <a
+					class="dropdown-item" href="#">Another action</a> <a
+					class="dropdown-item" href="#">Something else here</a>
+				<div class="dropdown-divider"></div>
+				<a class="dropdown-item" href="#">Separated link</a>
+			</div></li>
+		<li class="nav-item"><a class="nav-link" href="aboutus">About Us</a></li>
+		<li class="nav-item"><a class="nav-link disabled" href="#">Disabled</a>
+		</li>
+	</ul>
 
-   <div class="jumbotron">
-      <h1 class="display-4" th:text="${TotalReportedCases}"></h1>
-     <p class="lead">Total number of cases in the world </p>
-   </div>
+	<div class="jumbotron">
+		<h1 class="display-3">COVID19 Tracker Application</h1>
+		<p class="lead">This applicaion fetches data from Jhon Hopkins
+			university API and lists new cases of Corona in every country.</p>
+		<hr class="my-4">
+		<p>Please feel free to give us more feedback on our work by going
+			to our contact information tab and press the button below to learn
+			more</p>
+		<p class="lead">
+			<a class="btn btn-primary btn-lg" href="#" role="button">Learn
+				more</a>
+		</p>
+	</div>
+
+	<div class="jumbotron">
+		<h1 class="display-4" th:text="${TotalCasesInEthiopia}"></h1>
+		<p class="lead">Total number of cases in Ethiopia</p>
+	</div>
+
+	<div class="jumbotron">
+		<h1 class="display-4" th:text="${TotalReportedCases}"></h1>
+		<p class="lead">Total number of cases in the world</p>
+	</div>
 
 
-   
-    <table class="table">
-      <tr>
-        <th>State</th>
-        <th>Country</th>
-        <th>newTotalCases</th>
-        <th>Today's new Case</th>
-      </tr>
-      <tr th:each="locationStat : ${LocationStats}">
-        <td th:text="${locationStat.state}"></td>
-        <td th:text="${locationStat.country}"></td>
-        <td th:text="${locationStat.newTotalCases}"></td>
-        <td th:text="${locationStat.differenceFromPreviousDay}"></td>
-      </tr>
-    </table>
-    </div>
-  
-  </body>
-  
-  <div class="card">
-  <div class="card-body">
-   <p> Amir Abubeker </p>
-    <p> Aabubeker@miu.edu </p>
-   <p>  ID  - 610826   </p>
-  </div>
+
+	<table class="table table-hover">
+		<tr class="table-info">
+			<th>State</th>
+			<th>Country</th>
+			<th>newTotalCases</th>
+			<th>Today's new Case</th>
+		</tr>
+		<tr th:each="locationStat : ${LocationStats}" class="table-dark">
+			<td th:text="${locationStat.state}"></td>
+			<td th:text="${locationStat.country}"></td>
+			<td th:text="${locationStat.newTotalCases}"></td>
+			<td th:text="${locationStat.differenceFromPreviousDay}"></td>
+		</tr>
+	</table>
+	</div>
+
+</body>
+
+<div class="card">
+	<div class="card-body">
+		<p>Amir Abubeker</p>
+		<p>Aabubeker@miu.edu</p>
+		<p>ID - 610826</p>
+	</div>
 </div>
 
 </html>
