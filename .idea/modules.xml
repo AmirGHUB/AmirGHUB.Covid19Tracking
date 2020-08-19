@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/AmirGHUB.Covid19Tracking.iml" filepath="$PROJECT_DIR$/.idea/AmirGHUB.Covid19Tracking.iml" />
+      <module fileurl="file://$PROJECT_DIR$/COVIDTracking.iml" filepath="$PROJECT_DIR$/COVIDTracking.iml" />
+    </modules>
+  </component>
+</project>
